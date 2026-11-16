@@ -1,0 +1,26 @@
+import { skills } from "@/content/skills";
+import { Reveal } from "../reveal";
+import { CARD, Section } from "../section";
+
+export function Skills() {
+  return (
+    <Section id="skills" eyebrow="Compétences" title="TypeScript de bout en bout, du front Angular au back NestJS">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {skills.map((group, i) => (
+          <Reveal key={group.family} delay={(i % 3) * 90}>
+            <div className={`${CARD} h-full p-6`}>
+              <h3 className="text-base font-bold">{group.family}</h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <li key={item} className="rounded-full bg-background px-3 py-1 font-mono text-[12px]">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}

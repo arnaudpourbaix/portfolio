@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* Les valeurs de THEME.md : rien n'est codé en dur dans les composants. */
+:root {
+  --background: #f3f2ef;
+  --surface: #ffffff;
+  --foreground: #050a2e;
+  --muted: #4a5068;
+  --primary: #2f3bff;
+  --primary-foreground: #ffffff;
+  --accent: #c7c9ff;
+  --border: #e2e1dc;
+  --available: #166534;
+  --available-dot: #22c55e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-available: var(--available);
+  --color-available-dot: var(--available-dot);
+  --font-sans: var(--font-inter-tight);
+  --font-mono: var(--font-geist-mono);
+  --radius-card: 0.75rem;
+  --shadow-card: 0 1px 2px rgb(5 10 46 / 0.04), 0 8px 24px -12px rgb(5 10 46 / 0.12);
+  --shadow-card-hover: 0 2px 4px rgb(47 59 255 / 0.06), 0 18px 40px -14px rgb(47 59 255 / 0.32);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Le cartouche de la bannière : fond lavande, mot en italique bleu électrique. */
+.cartouche {
+  background: var(--accent);
+  color: var(--primary);
+  font-style: italic;
+  border-radius: 0.5rem;
+  padding: 0 0.2em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.available-pulse {
+  animation: available-pulse 2s ease-out infinite;
+}
+
+@keyframes available-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--available-dot) 60%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .available-pulse {
+    animation: none;
+  }
+}
