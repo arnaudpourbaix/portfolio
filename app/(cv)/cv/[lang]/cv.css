@@ -1,0 +1,38 @@
+/* Mise en page A4 du CV, reprise de html-resume. */
+@page { size: A4; margin: 14mm 16mm; }
+:root { --navy: #1c2457; --teal: #1f6b6f; --text: #222; --muted: #555; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #fff; }
+body { font: 10pt/1.4 Helvetica, Arial, sans-serif; color: var(--text); }
+h1, h2, h3 { margin: 0; line-height: 1.2; }
+ul { margin: 4px 0 0; padding-left: 14px; }
+p { margin: 0 0 6px; }
+
+.head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 14px; }
+.head h1 { font-size: 26pt; color: var(--navy); }
+.head .role { font-size: 14pt; color: var(--navy); margin: 4px 0 8px; }
+.head .contact { list-style: none; padding: 0; margin: 0; }
+.photo { border-radius: 50%; width: 32mm; height: 32mm; object-fit: cover; flex: none; }
+
+section { margin-top: 14px; }
+section > h2 { font-size: 14pt; color: var(--navy); border-bottom: 1px solid #333; padding-bottom: 4px; margin-bottom: 8px; }
+h3 { font-size: 10.5pt; color: var(--teal); font-weight: 600; }
+.line { display: flex; justify-content: space-between; gap: 16px; }
+.muted { color: var(--muted); font-size: 9pt; }
+
+.skills { display: grid; grid-template-columns: max-content 1fr; gap: 3px 14px; margin: 0; }
+.skills dt { color: var(--teal); font-weight: 600; }
+.skills dd { margin: 0; }
+
+.experiences { break-before: page; }
+/* Une mission peut se couper entre deux pages (sinon une longue mission laisse une demi-page vide),
+   mais jamais son en-tête, ni une puce, ni la liste des technologies séparée de la dernière puce. */
+.job { margin-bottom: 12px; }
+.job-head { break-inside: avoid; break-after: avoid; }
+.job li, .job p { break-inside: avoid; }
+.job .group { break-after: avoid; }
+.job .tech { break-before: avoid; }
+.job .title { font-weight: 600; }
+.job .context { margin: 4px 0 0; }
+.job .group { margin: 4px 0 0; font-weight: 600; }
+.job .tech { margin-top: 4px; color: var(--muted); font-size: 9pt; }

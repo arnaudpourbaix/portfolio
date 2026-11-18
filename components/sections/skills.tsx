@@ -1,12 +1,15 @@
-import { skills } from "@/content/skills";
+import { ui } from "@/content/ui";
+import type { Lang } from "@/lib/i18n";
+import { getSkills } from "@/lib/resume";
 import { Reveal } from "../reveal";
 import { CARD, Section } from "../section";
 
-export function Skills() {
+export function Skills({ lang }: { lang: Lang }) {
+  const t = ui[lang].skills;
   return (
-    <Section id="skills" eyebrow="Compétences" title="TypeScript de bout en bout, du front Angular au back NestJS">
+    <Section id="skills" eyebrow={t.eyebrow} title={t.title}>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {skills.map((group, i) => (
+        {getSkills(lang).map((group, i) => (
           <Reveal key={group.family} delay={(i % 3) * 90}>
             <div className={`${CARD} h-full p-6`}>
               <h3 className="text-base font-bold">{group.family}</h3>

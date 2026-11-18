@@ -1,10 +1,13 @@
 import Image from "next/image";
 import { profile, socials } from "@/content/profile";
+import { ui } from "@/content/ui";
+import type { Lang } from "@/lib/i18n";
 import { DownloadIcon, MailIcon, PhoneIcon, PinIcon } from "../icons";
 import { Reveal } from "../reveal";
 import { CARD, Section } from "../section";
 
-export function Contact() {
+export function Contact({ lang }: { lang: Lang }) {
+  const t = ui[lang];
   const direct = [
     { href: `mailto:${profile.email}`, label: profile.email, icon: MailIcon },
     { href: profile.phoneHref, label: profile.phone, icon: PhoneIcon },
@@ -13,25 +16,26 @@ export function Contact() {
   return (
     <Section
       id="contact"
-      eyebrow="Contact"
+      eyebrow={t.contact.eyebrow}
       title={
         <>
-          Parlons de votre <span className="cartouche">projet.</span>
+          {t.contact.title.start}
+          <span className="cartouche">{t.contact.title.highlight}</span>
         </>
       }
-      intro="Un projet TypeScript à lancer, une refonte ou une équipe à faire monter en qualité ? Écrivez-moi ou appelez-moi."
+      intro={t.contact.intro}
     >
       <div className="grid gap-5 lg:grid-cols-[1.2fr_1fr]">
         <Reveal>
           <div className="relative h-full overflow-hidden rounded-card bg-primary p-8 text-primary-foreground shadow-card-hover">
-            <p className="text-3xl font-bold leading-tight tracking-tight">Échangeons sur votre projet.</p>
-            <p className="mt-3 max-w-md opacity-90">Par e-mail ou par téléphone, comme vous préférez.</p>
+            <p className="text-3xl font-bold leading-tight tracking-tight">{t.contact.cardTitle}</p>
+            <p className="mt-3 max-w-md opacity-90">{t.contact.cardText}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 rounded-full bg-surface px-6 py-3 text-[15px] font-semibold text-primary">
-                <MailIcon /> M&apos;écrire
+                <MailIcon /> {t.contact.write}
               </a>
-              <a href={profile.cv} download className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3 text-[15px] font-semibold transition-colors hover:bg-primary-foreground/10">
-                <DownloadIcon /> Mon CV en PDF
+              <a href={t.cv} download className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3 text-[15px] font-semibold transition-colors hover:bg-primary-foreground/10">
+                <DownloadIcon /> {t.contact.cvPdf}
               </a>
             </div>
           </div>

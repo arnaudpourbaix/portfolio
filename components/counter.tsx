@@ -4,12 +4,25 @@ import { useEffect, useRef, useState } from "react";
 
 const DURATION_MS = 1600;
 
-function format(value: number, decimals: number) {
-  return value.toLocaleString("fr-FR", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+function format(value: number, decimals: number, locale: string) {
+  return value.toLocaleString(locale, { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 }
 
 /** Chiffre qui défile jusqu'à sa valeur quand il entre à l'écran ; la valeur finale s'affiche sans JavaScript ou si le visiteur réduit les animations. */
-export function Counter({ value, decimals = 0, prefix = "", suffix = "" }: { value: number; decimals?: number; prefix?: string; suffix?: string }) {
+export function Counter({
+  value,
+  locale,
+  decimals = 0,
+  prefix = "",
+  suffix = "",
+}: {
+  value: number;
+  /** Locale de formatage (« fr-FR » : 80 000, « en-GB » : 80,000). */
+  locale: string;
+  decimals?: number;
+  prefix?: string;
+  suffix?: string;
+}) {
   const ref = useRef<HTMLSpanElement>(null);
   const [current, setCurrent] = useState(value);
 
@@ -40,7 +53,7 @@ export function Counter({ value, decimals = 0, prefix = "", suffix = "" }: { val
   return (
     <span ref={ref} className="tabular-nums">
       {prefix}
-      {format(current, decimals)}
+      {format(current, decimals, locale)}
       {suffix}
     </span>
   );

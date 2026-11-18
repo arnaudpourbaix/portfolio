@@ -1,0 +1,15 @@
+[
+  { "id": "ag2r-la-mondiale", "label": "AG2R La Mondiale", "logo": "ag2r-la-mondiale.jpg" },
+  { "id": "norsys", "label": "Norsys", "logo": "norsys.jpg" },
+  { "id": "norauto", "label": "Norauto", "logo": "norauto.jpg" },
+  { "id": "unis", "label": "Unis", "logo": "unis.jpg" },
+  { "id": "aid-micro", "label": "AID Micro", "logo": null, "own": true },
+  { "id": "elosi", "label": "ELOSI", "logo": "elosi.jpg" },
+  { "id": "kiloutou", "label": "Kiloutou", "logo": "kiloutou.jpg" },
+  { "id": "pictime-group", "label": "Pictime Group", "logo": "pictime-group.jpg" },
+  { "id": "astek", "label": "Astek", "logo": "astek.jpg" },
+  { "id": "auchan", "label": "Auchan", "logo": "auchan.jpg" },
+  { "id": "proxiad", "label": "Proxiad", "logo": "proxiad.jpg" },
+  { "id": "bpce", "label": "BPCE", "logo": "bpce.svg" },
+  { "id": "allianz", "label": "Allianz", "logo": "allianz.svg" }
+]

@@ -1,12 +1,15 @@
 import { expertise } from "@/content/expertise";
+import { ui } from "@/content/ui";
+import type { Lang } from "@/lib/i18n";
 import { Reveal } from "../reveal";
 import { CARD, Section } from "../section";
 
-export function Expertise() {
+export function Expertise({ lang }: { lang: Lang }) {
+  const t = ui[lang].expertise;
   return (
-    <Section id="expertise" eyebrow="Expertises" title="Trois savoir-faire au service de vos projets">
+    <Section id="expertise" eyebrow={t.eyebrow} title={t.title}>
       <div className="grid gap-5 md:grid-cols-3">
-        {expertise.map((item, i) => (
+        {expertise[lang].map((item, i) => (
           <Reveal key={item.title} delay={i * 110}>
             <article className={`${CARD} flex h-full flex-col p-7`}>
               <span aria-hidden="true" className="flex size-10 items-center justify-center rounded-lg bg-accent font-mono text-sm font-semibold text-primary">
