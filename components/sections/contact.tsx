@@ -2,7 +2,7 @@ import Image from "next/image";
 import { profile, socials } from "@/content/profile";
 import { ui } from "@/content/ui";
 import type { Lang } from "@/lib/i18n";
-import { DownloadIcon, MailIcon, PhoneIcon, PinIcon } from "../icons";
+import { CalendarIcon, DownloadIcon, MailIcon, PhoneIcon, PinIcon } from "../icons";
 import { Reveal } from "../reveal";
 import { CARD, Section } from "../section";
 
@@ -33,6 +33,9 @@ export function Contact({ lang }: { lang: Lang }) {
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 rounded-full bg-surface px-6 py-3 text-[15px] font-semibold text-primary">
                 <MailIcon /> {t.contact.write}
+              </a>
+              <a href={profile.calendly} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3 text-[15px] font-semibold transition-colors hover:bg-primary-foreground/10">
+                <CalendarIcon /> {t.contact.book}
               </a>
               <a href={t.cv} download className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3 text-[15px] font-semibold transition-colors hover:bg-primary-foreground/10">
                 <DownloadIcon /> {t.contact.cvPdf}

@@ -45,8 +45,9 @@ const fr = {
     title: { start: "Parlons de votre ", highlight: "projet." },
     intro: "Un projet TypeScript à lancer, une refonte ou une équipe à faire monter en qualité ? Écrivez-moi ou appelez-moi.",
     cardTitle: "Échangeons sur votre projet.",
-    cardText: "Par e-mail ou par téléphone, comme vous préférez.",
+    cardText: "Par e-mail, par téléphone ou lors d'un rendez-vous de 30 minutes, comme vous préférez.",
     write: "M'écrire",
+    book: "Prendre rendez-vous",
     cvPdf: "Mon CV en PDF",
   },
 };
@@ -94,8 +95,9 @@ const en: Ui = {
     title: { start: "Let's talk about your ", highlight: "project." },
     intro: "A TypeScript project to launch, a redesign, or a team to take to the next level of quality? Email or call me.",
     cardTitle: "Let's discuss your project.",
-    cardText: "By email or phone, whichever you prefer.",
+    cardText: "By email, by phone or in a 30-minute call, whichever you prefer.",
     write: "Email me",
+    book: "Book a call",
     cvPdf: "My CV as a PDF",
   },
 };

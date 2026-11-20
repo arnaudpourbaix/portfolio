@@ -8,9 +8,9 @@
   "phone": "06 26 12 27 68",
   "location": "Fontainebleau, France",
   "calendly": "https://calendly.com/pourbaix-arnaud/30min",
-  "links": [
-    { "title": "Email", "href": "mailto:pourbaix.arnaud@gmail.com" },
-    { "title": "LinkedIn", "href": "https://www.linkedin.com/in/arnaud-pourbaix-58a5981b/" },
-    { "title": "Malt", "href": "https://www.malt.fr/profile/arnaudpourbaix" }
+  "socials": [
+    { "id": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com/in/arnaud-pourbaix-58a5981b/", "logo": "/logos/linkedin.png" },
+    { "id": "malt", "label": "Malt", "href": "https://www.malt.fr/profile/arnaudpourbaix", "logo": "/logos/malt.png" },
+    { "id": "collective", "label": "Collective", "href": "https://www.collective.work/profile/arnaud-pourbaix", "logo": "/logos/collective.png" }
   ]
 }

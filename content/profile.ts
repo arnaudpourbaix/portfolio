@@ -14,12 +14,7 @@ export const profile = {
   email: site.email,
   phone: site.phone,
   phoneHref: `tel:+33${site.phone.replace(/\s/g, "").slice(1)}`,
+  calendly: site.calendly,
 };
 
-export type SocialId = "linkedin" | "malt" | "collective";
-
-export const socials: { id: SocialId; label: string; href: string; logo: string }[] = [
-  { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/arnaud-pourbaix-58a5981b/", logo: "/logos/linkedin.png" },
-  { id: "malt", label: "Malt", href: "https://www.malt.fr/profile/arnaudpourbaix", logo: "/logos/malt.png" },
-  { id: "collective", label: "Collective", href: "https://www.collective.work/profile/arnaud-pourbaix", logo: "/logos/collective.png" },
-];
+export const socials: { id: string; label: string; href: string; logo: string }[] = site.socials;
